@@ -1,0 +1,15 @@
+{
+  "name": "cuyuniv",
+  "version": "1.0.0",
+  "description": "CuyUniv",
+  "main": "index.js",
+  "scripts": {
+    "nyala": "nodemon index.js"
+  },
+  "author": "Al Fthi",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.22",
+    "rupiah-format": "^1.0.0"
+  }
+}

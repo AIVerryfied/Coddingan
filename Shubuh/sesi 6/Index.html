@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CUYUNIV</title>
+    <link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <a onclick="reRender()"  id="home" >HOME</a>
+            <a onclick="darkMode()" id="mode" >MODE</a>
+        </nav>
+        <h1>BARU LAGI COY</h1>
+        <p class="info" id="info"></p>
+    </div>
+    <!-- initializing function script -->
+    <script>
+        let body = document.body;
+        let info = document.getElementById("info");
+        let mode = document.getElementById("mode");
+        let home = document.getElementById("home");
+        const darkLimit = 5;
+        let darkCounter = 0;
+        let darkRemainingLeft;
+
+
+        function darkMode() {
+            if (darkRemainingLeft == 1) {
+                info.textContent = "JATAH DARKMODE SUDAH HABIS"
+                mode.style.display = "none";
+                home.textContent = "RESTART";
+               return;
+            }
+           
+            darkCounter += 1;
+            darkRemainingLeft = darkLimit - darkCounter;
+
+            // render ke info element
+            info.textContent = `Darkmode dipakai ${darkCounter}x, tersisa ${darkRemainingLeft}`;
+            body.classList.toggle("dark");
+            
+        }
+
+        function reRender() {
+        location.reload();
+        }
+    </script>
+</body>
+
+</html>
